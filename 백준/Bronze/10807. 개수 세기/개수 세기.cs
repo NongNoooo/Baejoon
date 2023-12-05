@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 class Program {
   public static void Main (string[] args) {
@@ -8,17 +8,9 @@ class Program {
     string[] numbers = Console.ReadLine().Split();
 
     int findNum = int.Parse(Console.ReadLine());
-    
-    int count = 0;
-    
-    for(int i = 0; i < numbers.Length; i++){
-      int tempNum = int.Parse(numbers[i]);
 
-      if(tempNum == findNum){
-        count++;
-      }
-    }
+    int result = Array.FindAll(numbers, x => int.Parse(x) == findNum).Length;
 
-    Console.WriteLine(count);
+    Console.WriteLine(result);
   }
 }
