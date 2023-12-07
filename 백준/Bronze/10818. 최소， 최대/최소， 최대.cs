@@ -2,17 +2,21 @@ using System;
 
 class Program {
   public static void Main (string[] args) {
+    int min = 1000001;
+    int max = -1000001;
+    int temp;
+    
     int num = int.Parse(Console.ReadLine());
 
     string[] numStr = Console.ReadLine().Split();
 
-    int[] numbers = new int[num];
+    
     for(int i = 0; i < num; i++){
-      numbers[i] = int.Parse(numStr[i]);
+      temp = int.Parse(numStr[i]);
+      if(temp < min) min = temp;
+      if(temp > max) max = temp;
     }
     
-    Array.Sort(numbers);
-
-    Console.Write($"{numbers[0]} {numbers[num - 1]}");
+    Console.Write($"{min} {max}");
   }
 }
