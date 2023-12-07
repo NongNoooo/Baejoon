@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 class Program {
   public static void Main (string[] args) {
@@ -7,10 +6,13 @@ class Program {
 
     string[] numStr = Console.ReadLine().Split();
 
-    int[] numbers = numStr.Select(n => int.Parse(n)).ToArray();
+    int[] numbers = new int[num];
+    for(int i = 0; i < num; i++){
+      numbers[i] = int.Parse(numStr[i]);
+    }
     
     Array.Sort(numbers);
 
-    Console.Write($"{numbers[0]} {numbers[numbers.Length - 1]}");
+    Console.Write($"{numbers[0]} {numbers[num - 1]}");
   }
 }
