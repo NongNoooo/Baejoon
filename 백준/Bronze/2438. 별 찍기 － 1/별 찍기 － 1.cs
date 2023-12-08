@@ -10,9 +10,9 @@ class Program
 
     for(int i = 0; i < starNum; i++)
     {
-      for(int j = 0; j < starNum; j++)
+      for(int j = 0; j < i + 1; j++)
       {
-        if(j <= i) strBuilder.Append("*");
+        strBuilder.Append("*");
       }
       strBuilder.Append("\n");
     }
