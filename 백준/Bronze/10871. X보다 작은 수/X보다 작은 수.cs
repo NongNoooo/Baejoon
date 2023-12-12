@@ -5,17 +5,17 @@ class Program
 {
   public static void Main (string[] args) 
   {
-    int[] nums1 = Array.ConvertAll(Console.ReadLine().Split(), s => int.Parse(s));
+    string[] str = Console.ReadLine().Split();
 
-    int[] nums2 = Array.ConvertAll(Console.ReadLine().Split(), s => int.Parse(s));
+    int[] nums = Array.ConvertAll(Console.ReadLine().Split(), s => int.Parse(s));
 
-    int numbersCount = nums2.Length;
-    int targetNumber = nums1[1];
+    int numbersCount = int.Parse(str[0]);
+    int targetNumber = int.Parse(str[1]);
     StringBuilder strBuilder = new StringBuilder();
     
     for(int i = 0; i < numbersCount; i++)
     {
-      if(nums2[i] < targetNumber) strBuilder.Append(nums2[i] + " ");
+      if(nums[i] < targetNumber) strBuilder.Append(nums[i] + " ");
     }
 
     Console.WriteLine(strBuilder.ToString());
